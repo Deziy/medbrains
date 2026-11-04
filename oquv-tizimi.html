@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bilim — oʻquv markazi</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f7;--card:#fff;--ink:#14213d;--mut:#5b6b85;--line:#d6deea;--ac:#2450e6;--on:#fff;--acs:#e3eaff;--ok:#16825d;--bad:#c23b3b;--gold:#b7791f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e1524;--card:#17203a;--ink:#e7ecf8;--mut:#92a0bd;--line:#2a3658;--ac:#7b9bff;--on:#0e1524;--acs:#22305c;--ok:#4cc79a;--bad:#ef7a7a;--gold:#e8b44f}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e1524;--card:#17203a;--ink:#e7ecf8;--mut:#92a0bd;--line:#2a3658;--ac:#7b9bff;--on:#0e1524;--acs:#22305c;--ok:#4cc79a;--bad:#ef7a7a;--gold:#e8b44f}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:var(--card);border-bottom:1px solid var(--line)}
+.logo{all:unset;cursor:pointer;font-weight:800;font-size:20px;letter-spacing:-.02em}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tg{cursor:pointer;background:none;font-size:14px;padding:4px 10px;border:1px solid var(--line);border-radius:6px}
+main{max-width:1000px;margin:0 auto;padding:24px 20px 48px}
+h1{font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.02em}
+h2.sec{font-size:22px;margin:44px 0 14px;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0 0 20px}
+.crumb{cursor:pointer;background:none;border:0;color:var(--ac);font-weight:600;padding:0;margin-bottom:12px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;background:linear-gradient(135deg,#1c3fb8,#0f7a8a);color:#fff;border-radius:16px;padding:36px;overflow:hidden}
+.hero h1{font-size:36px;color:#fff}
+.hero p{margin:10px 0 20px;opacity:.92}
+.hero .go{cursor:pointer;background:#fff;color:#14213d;border:0;padding:12px 22px;border-radius:10px;font-weight:700;transition:transform .2s}
+.hero .go:hover{transform:translateY(-2px)}
+.art{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:34px;text-align:center}
+.art span{background:rgba(255,255,255,.16);border-radius:12px;padding:6px;transition:transform .25s}
+.art span:hover{transform:scale(1.12) rotate(-4deg)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:24px}.hero h1{font-size:28px}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.stat b{display:block;font-size:24px;color:var(--ac)}
+.stat small{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{cursor:pointer;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0;display:block;width:100%;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(20,33,61,.18);border-color:var(--ac)}
+.pic{height:120px;display:grid;place-items:center;font-size:52px;font-weight:800;color:#fff;overflow:hidden;background:linear-gradient(135deg,hsl(var(--h) 70% 52%),hsl(calc(var(--h) + 35) 70% 36%))}
+.pic{padding:0}.pic img{padding:6px}.pic svg,.pic img{width:100%;height:100%;object-fit:cover;transition:transform .3s;display:block}
+.card:hover .pic svg,.card:hover .pic img{transform:scale(1.12)}
+.art svg{display:block;width:100%;height:70px}
+.pic i{font-style:normal;transition:transform .3s;display:block}
+.card:hover .pic svg,.pic img{width:100%;height:100%;object-fit:cover;transition:transform .3s;display:block}
+.card:hover .pic svg,.card:hover .pic img{transform:scale(1.12)}
+.art svg{display:block;width:100%;height:70px}
+.pic i{transform:scale(1.25) rotate(-6deg)}
+.cb{padding:14px 16px}
+.cb b{display:block;font-size:17px}
+.cb small{color:var(--mut)}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;transition:transform .25s}
+.f:hover{transform:translateY(-4px)}
+.f .e{font-size:30px}
+.f b{display:block;margin:6px 0 2px}
+.f span{color:var(--mut);font-size:15px}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.r{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;transition:transform .25s,border-color .25s}
+.r:hover{transform:translateY(-4px);border-color:var(--ac)}
+.r p{margin:0 0 12px}
+.who{display:flex;align-items:center;gap:10px;font-size:14px}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;background:hsl(var(--h) 60% 45%)}
+.who small{color:var(--mut);display:block}
+.stars{color:var(--gold);letter-spacing:2px}
+footer{text-align:center;color:var(--mut);font-size:14px;margin-top:40px}
+.list{display:flex;flex-direction:column;gap:12px}
+.row{display:flex;align-items:center;gap:14px;padding:14px 16px}
+.row .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--acs);display:grid;place-items:center;font-weight:800}
+.row.paid .n{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.tag{margin-left:auto;font-size:13px;font-weight:600;color:var(--ok)}
+.paid .tag{color:var(--gold)}
+.fh{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.fh .pic{width:84px;height:84px;border-radius:16px;font-size:40px;flex:none}
+.body{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+.body p{max-width:68ch}
+.q{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.q h3{margin:0 0 6px;font-size:17px}
+.opt{cursor:pointer;display:block;width:100%;text-align:left;margin:8px 0;padding:10px 14px;background:none;border:1px solid var(--line);border-radius:8px;transition:transform .15s,border-color .15s}
+.opt:hover{border-color:var(--ac);transform:translateX(4px)}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,transparent)}
+.msg{font-weight:600;min-height:1.6em;margin-top:8px}
+.btn{cursor:pointer;background:var(--ac);color:var(--on);border:0;padding:10px 18px;border-radius:8px;font-weight:600}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);max-width:380px;width:calc(100% - 32px);padding:24px}
+dialog::backdrop{background:rgba(10,15,30,.55)}
+dialog h2{margin:0 0 6px;font-size:20px}
+.price{font-size:26px;font-weight:800;margin:10px 0}
+.acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+
+main>*:not(.rv){animation:up .45s backwards}
+@keyframes up{from{opacity:0;transform:translateY(16px)}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+.grid.in .card{animation:up .5s backwards;animation-delay:calc(var(--i)*70ms)}
+.art svg{animation:float 4s ease-in-out infinite}
+.art span:nth-child(even) svg{animation-delay:-2s}
+.opt.ok{animation:pop .35s}.opt.bad{animation:shake .3s}
+.pic.wide{height:170px;border-radius:14px;margin-bottom:16px}
+.body{padding:28px}.body p{font-size:17px}
+.key{background:var(--acs);border-radius:10px;padding:14px 18px;margin:18px 0}.key ul{margin:6px 0 0;padding-left:20px}
+.q h2.sec{margin:0 0 6px;font-size:19px}.qq{margin-top:18px}
+.res{display:none}.res.show{display:block;margin-top:22px;padding:18px;border:1px solid var(--ok);border-radius:12px;animation:pop .5s}
+.res .btn{margin:12px 8px 0 0}.score{font-size:22px;font-weight:800}
+.cta{margin-top:44px;text-align:center;background:linear-gradient(135deg,#1c3fb8,#0f7a8a);color:#fff;border-radius:16px;padding:30px 20px}
+.cta h2{margin:0 0 6px}.cta p{margin:0;opacity:.92}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+</style>
+</head>
+<body>
+<header>
+  <button class="logo" id="home" type="button">Bilim</button>
+  <button class="tg" id="theme" type="button">Mavzu</button>
+</header>
+<main id="main"></main>
+<dialog id="pay" aria-labelledby="pt">
+  <h2 id="pt">Bu dars pullik</h2>
+  <p id="pd"></p>
+  <div class="price" id="pp"></div>
+  <div class="acts">
+    <button class="btn" id="paybtn" type="button">Toʻlov qilish</button>
+    <button class="btn ghost" id="close" type="button">Yopish</button>
+  </div>
+</dialog>
+<script>
+/* Har fanda 3 dars: 1- va 2-dars bepul (testli), 3-dars pullik. */
+function F(t,i,h,p,d,a,b,c){return{t:t,i:i,h:h,price:p,d:d,D:[a,b,{t:c,P:[],K:[],T:[]}]}}
+function L(t,P,K,T){return{t:t,P:P,K:K,T:T.map(function(x){return{q:x[0],o:x[1],a:x[2]}})}}
+var FANLAR=[
+F("Anatomiya","anatomiya",350,"59 000 soʻm","Inson tanasining tuzilishi",
+ L("Suyaklar tizimi",["Skelet tananing tayanchi hisoblanadi. Voyaga yetgan odamda 206 ta suyak bor; chaqaloqda ular koʻproq, chunki keyinchalik baʼzilari qoʻshilib ketadi.","Suyaklar tayanch va harakat vazifasidan tashqari ichki aʼzolarni himoya qiladi, qon hujayralarini hosil qiladi hamda kalsiy va fosfor zaxirasini saqlaydi."],["Skeletda 206 ta suyak bor","Eng uzun suyak — son suyagi","Qizil ilik qon hujayralarini hosil qiladi"],
+  [["Skeletda nechta suyak bor?",["106","206","306"],1],["Eng uzun suyak qaysi?",["Yelka suyagi","Son suyagi","Boldir suyagi"],1],["Qon hujayralari qayerda hosil boʻladi?",["Qizil ilikda","Jigarda","Oʻpkada"],0]]),
+ L("Yurak tuzilishi",["Yurak — mushakli aʼzo boʻlib, koʻkrak qafasida chap tomonga biroz siljigan holda joylashgan. U toʻrt kameradan iborat: ikkita boʻlmacha va ikkita qorincha.","Oʻng yarmi qonni oʻpkaga, chap yarmi esa butun tanaga haydaydi. Qopqoqlar qonning orqaga qaytishiga yoʻl qoʻymaydi."],["4 kamera: 2 boʻlmacha, 2 qorincha","Chap qorincha devori eng qalin","Qopqoqlar qonni bir yoʻnalishda yuritadi"],
+  [["Yurak nechta kamerali?",["2","3","4"],2],["Qonni butun tanaga qaysi qism haydaydi?",["Oʻng boʻlmacha","Chap qorincha","Oʻng qorincha"],1],["Qopqoqlarning vazifasi nima?",["Qonni sovitish","Oqimni bir yoʻnalishda tutish","Qonni tozalash"],1]]),"Nerv tizimi"),
+F("Biokimyo","biokimyo",280,"69 000 soʻm","Tirik organizmdagi kimyoviy jarayonlar",
+ L("Oqsillar",["Oqsillar aminokislotalar zanjiridan tuzilgan yirik molekulalardir. Tabiatda 20 ta asosiy aminokislota bor, ular turlicha tartibda birikib minglab oqsillarni hosil qiladi.","Oqsillar qurilish, himoya (antitanalar), tashish (gemoglobin) va katalitik (fermentlar) vazifalarni bajaradi."],["Monomeri — aminokislota","20 ta asosiy aminokislota","Fermentlarning koʻpchiligi oqsil"],
+  [["Oqsil qaysi birliklardan tuziladi?",["Aminokislota","Glyukoza","Yogʻ kislotasi"],0],["Gemoglobin qanday vazifa bajaradi?",["Kislorod tashiydi","Energiya saqlaydi","Irsiyatni uzatadi"],0],["Asosiy aminokislotalar soni nechta?",["10","20","40"],1]]),
+ L("Fermentlar",["Fermentlar — kimyoviy reaksiyalarni tezlashtiradigan biologik katalizatorlar. Ular reaksiyada sarflanmaydi, shuning uchun bir fermentdan koʻp marta foydalaniladi.","Har bir ferment faqat oʻziga mos moddaga taʼsir qiladi. Harorat va pH oʻzgarsa, ferment faolligi pasayadi."],["Ferment reaksiyani tezlatadi","Har bir ferment oʻz substratiga xos","Yuqori haroratda ferment buziladi"],
+  [["Ferment nima?",["Biologik katalizator","Vitamin","Gormon"],0],["Ferment qaysi moddaga taʼsir qiladi?",["Istalgan moddaga","Faqat oʻziga mos substratga","Faqat suvga"],1],["Juda yuqori haroratda ferment nima boʻladi?",["Tezroq ishlaydi","Buziladi","Koʻpayadi"],1]]),"Uglevodlar almashinuvi"),
+F("Fiziologiya","fiziologiya",200,"69 000 soʻm","Aʼzolar va tizimlar faoliyati",
+ L("Nafas olish",["Nafas olishda havo burun, halqum, hiqildoq, traxeya va bronxlar orqali oʻpkaga boradi. Oʻpkaning eng mayda qismlari — alveolalardir.","Alveolalarda kislorod qonga oʻtadi, qondan esa karbonat angidrid chiqariladi. Nafas olish diafragma va qovurgʻalararo mushaklar yordamida amalga oshadi."],["Gaz almashinuvi alveolalarda sodir boʻladi","Diafragma — asosiy nafas mushagi","Yoʻl: burun → traxeya → bronxlar"],
+  [["Gaz almashinuvi qayerda boʻladi?",["Alveolalarda","Jigarda","Oshqozonda"],0],["Asosiy nafas mushagi qaysi?",["Diafragma","Biseps","Trapetsiya"],0],["Qondan oʻpka orqali chiqariladigan gaz?",["Kislorod","Karbonat angidrid","Azot"],1]]),
+ L("Qon aylanishi",["Qon aylanishi ikki doiradan iborat: katta doira butun tanani, kichik doira esa oʻpkani qon bilan taʼminlaydi.","Arteriyalar qonni yurakdan olib ketadi, venalar yurakka qaytaradi, kapillyarlarda esa moddalar almashinuvi sodir boʻladi."],["Ikki qon aylanish doirasi bor","Arteriya — yurakdan olib ketadi","Almashinuv kapillyarlarda boʻladi"],
+  [["Qonni yurakdan nima olib ketadi?",["Venalar","Arteriyalar","Limfa"],1],["Qon aylanish doiralari soni nechta?",["1","2","3"],1],["Moddalar almashinuvi qayerda boʻladi?",["Kapillyarlarda","Aortada","Qopqoqlarda"],0]]),"Hazm tizimi"),
+F("Patologiya","patologiya",160,"79 000 soʻm","Kasalliklarning rivojlanish mexanizmi",
+ L("Yalligʻlanish",["Yalligʻlanish — toʻqima shikastlanishiga organizmning himoya javobidir. Klassik belgilari: qizarish, shish, ogʻriq va issiqlik; keyinchalik funksiya buziladi.","Jarayonda qon tomirlari kengayadi, leykotsitlar shikastlangan joyga oʻtadi va zararli omillarni yoʻq qiladi."],["4 ta klassik belgi bor","Leykotsitlar himoya qiladi","Oʻtkir va surunkali turlari mavjud"],
+  [["Qaysi biri yalligʻlanish belgisi?",["Shish","Sovuqlik","Rangsizlanish"],0],["Himoyada qaysi hujayralar qatnashadi?",["Leykotsitlar","Neyronlar","Eritrotsitlar"],0],["Yalligʻlanish qanday turlarga boʻlinadi?",["Faqat oʻtkir","Oʻtkir va surunkali","Faqat surunkali"],1]]),
+ L("Nekroz",["Nekroz — tirik organizmda hujayra va toʻqimalarning oʻlishi. Sabablari: qon taʼminotining buzilishi, jarohat, zahar yoki juda yuqori va past harorat.","Shakllari: quruq, nam va gangrena. Infarkt — qon taʼminoti toʻxtashidan hosil boʻladigan nekrozdir."],["Nekroz — toʻqima oʻlimi","Sababi koʻpincha qon taʼminoti buzilishi","Infarkt — nekroz turi"],
+  [["Nekroz nima?",["Toʻqima oʻlimi","Yangi hujayra","Qon quyilishi"],0],["Infarkt nima?",["Qon taʼminoti buzilishidan nekroz","Yalligʻlanish","Oʻsma"],0],["Nekrozning sababi qaysi?",["Qon taʼminotining buzilishi","Yetarli uyqu","Vitamin"],0]]),"Oʻsmalar"),
+F("Kimyo","kimyo",30,"49 000 soʻm","Moddalar va ularning oʻzgarishi",
+ L("Davriy jadval",["Elementlar davriy jadvalini 1869-yilda D. I. Mendeleyev yaratgan. Elementlar atom massasi va xossalariga koʻra davr va guruhlarga joylashtirilgan.","Jadvalda 7 ta davr va 18 ta guruh bor. Bir guruhdagi elementlar oʻxshash xossalarga ega."],["Yaratuvchi: Mendeleyev, 1869","7 davr, 18 guruh","Bir guruh — oʻxshash xossa"],
+  [["Davriy jadvalni kim yaratgan?",["Nyuton","Mendeleyev","Eynshteyn"],1],["Davrlar soni nechta?",["5","7","9"],1],["Bir guruhdagi elementlar qanday?",["Oʻxshash xossali","Mutlaqo har xil","Faqat gazlar"],0]]),
+ L("Kislota va asoslar",["pH muhitning kislotali yoki ishqoriyligini koʻrsatadi. pH 7 — neytral, 7 dan kam — kislotali, 7 dan koʻp — ishqoriy muhit.","Kislotalar lakmusni qizartiradi, asoslar koʻkartiradi. Kislota va asos oʻzaro reaksiyaga kirishib tuz va suv hosil qiladi."],["pH 7 — neytral muhit","Kislota lakmusni qizartiradi","Neytrallanishdan tuz va suv hosil boʻladi"],
+  [["pH 7 qanday muhit?",["Kislotali","Neytral","Ishqoriy"],1],["Kislota lakmusni qaysi rangga oʻtkazadi?",["Qizil","Koʻk","Yashil"],0],["Neytrallanish mahsuloti nima?",["Tuz va suv","Faqat gaz","Metall"],0]]),"Organik kimyo"),
+F("Biologiya","biologiya",120,"49 000 soʻm","Tirik tabiat haqida fan",
+ L("Hujayra",["Hujayra — tirik organizmning tuzilish va faoliyat birligi. Hayvon hujayrasi membrana, sitoplazma va yadrodan iborat.","Yadroda irsiy axborot (DNK) saqlanadi, mitoxondriyalar energiya hosil qiladi, ribosomalar esa oqsil sintez qiladi."],["Yadro — irsiy axborot markazi","Mitoxondriya — energiya","Ribosoma — oqsil sintezi"],
+  [["Irsiy axborot qayerda saqlanadi?",["Yadroda","Membranada","Sitoplazmada"],0],["Energiyani qaysi organoid hosil qiladi?",["Mitoxondriya","Ribosoma","Yadrocha"],0],["Oqsil sintezi qayerda boradi?",["Ribosomada","Membranada","Vakuolada"],0]]),
+ L("Fotosintez",["Fotosintez — oʻsimliklarning yorugʻlik energiyasi yordamida organik modda hosil qilish jarayoni. U xloroplastlarda, xlorofill ishtirokida boradi.","Karbonat angidrid va suvdan glyukoza hamda kislorod hosil boʻladi. Kislorod atmosferaga ajraladi."],["Joyi: xloroplast","Pigment: xlorofill","Mahsulot: glyukoza va kislorod"],
+  [["Fotosintezda qaysi gaz ajraladi?",["Kislorod","Azot","Vodorod"],0],["Fotosintez pigmenti qaysi?",["Xlorofill","Melanin","Gemoglobin"],0],["Fotosintez qayerda boradi?",["Xloroplastda","Yadroda","Mitoxondriyada"],0]]),"Genetika"),
+F("Ingliz tili","ingliz",210,"59 000 soʻm","Kundalik soʻzlar va gaplar",
+ L("Salomlashish",["Ingliz tilida muloqot salomlashishdan boshlanadi. Hello va Hi — oddiy salom, Good morning, Good afternoon, Good evening esa kunning vaqtiga qarab aytiladi.","Tanishishda My name is… (Mening ismim…) va Nice to meet you (Tanishganimdan xursandman) iboralari ishlatiladi."],["Hello / Hi — salom","Good morning — xayrli tong","Nice to meet you — tanishganimdan xursandman"],
+  [["“Xayrli tong” inglizcha qanday?",["Good night","Good morning","Thank you"],1],["“My name is…” nima degani?",["Mening ismim…","Men yoshman","Men oʻqiyman"],0],["“Nice to meet you” qachon aytiladi?",["Xayrlashganda","Tanishganda","Rahmat aytganda"],1]]),
+ L("Sonlar",["1 dan 10 gacha sonlar: one, two, three, four, five, six, seven, eight, nine, ten.","Oʻnlik sonlar -ty bilan tugaydi: twenty, thirty, forty. 13 dan 19 gacha sonlar esa -teen bilan tugaydi: thirteen, fourteen, fifteen."],["One–ten: 1 dan 10 gacha","20 — twenty, 30 — thirty","13–19 oraligʻida -teen qoʻshimchasi"],
+  [["“Three” nechta?",["2","3","4"],1],["20 inglizcha qanday?",["Twelve","Twenty","Two"],1],["“Fifteen” nechta?",["5","15","50"],1]]),"Zamonlar"),
+F("Matematika","matematika",260,"49 000 soʻm","Algebra va geometriya asoslari",
+ L("Kasrlar",["Kasr butunning bir yoki bir necha teng boʻlagini bildiradi. Yuqoridagi son — surat, pastdagi — maxraj; maxraj butun nechta teng boʻlakka boʻlinganini koʻrsatadi.","Maxraji bir xil kasrlar qoʻshilganda suratlar qoʻshiladi, maxraj oʻzgarmaydi: 1/5 + 2/5 = 3/5."],["Surat yuqorida, maxraj pastda","Maxraji bir xil: suratlar qoʻshiladi","1/2 = 2/4"],
+  [["1/2 + 1/2 nimaga teng?",["1/4","1","2"],1],["3/5 kasrda maxraj qaysi?",["3","5","8"],1],["1/5 + 2/5 nimaga teng?",["3/10","3/5","2/5"],1]]),
+ L("Tenglamalar",["Tenglama — nomaʼlum son qatnashgan tenglik. Uni yechish uchun nomaʼlumni bir tomonda yolgʻiz qoldirish kerak.","Tenglikning ikki tomoniga bir xil amal qoʻllansa, tenglik buzilmaydi. x + 3 = 5 boʻlsa, ikkala tomondan 3 ayiriladi: x = 2."],["Ikki tomonga bir xil amal qoʻllang","Nomaʼlumni yolgʻiz qoldiring","Yechimni tekshirib koʻring"],
+  [["x + 4 = 9 boʻlsa, x nechaga teng?",["4","5","13"],1],["2x = 10 boʻlsa, x nechaga teng?",["5","8","20"],0],["x − 3 = 7 boʻlsa, x nechaga teng?",["4","10","21"],1]]),"Uchburchaklar"),
+F("Rus tili","rus",0,"49 000 soʻm","Rus tilida soʻzlashish asoslari",
+ L("Salomlashish",["Rus tilida odatiy salom — Привет (norasmiy) va Здравствуйте (rasmiy). Xayrlashishda До свидания ishlatiladi.","Rahmat — Спасибо, iltimos — Пожалуйста. Bu soʻzlar kundalik muloqotning asosidir."],["Привет — salom","Спасибо — rahmat","Пожалуйста — iltimos"],
+  [["“Спасибо” nimani bildiradi?",["Salom","Rahmat","Xayr"],1],["Qaysi biri rasmiy salom?",["Привет","Здравствуйте","Пока"],1],["“До свидания” nimani bildiradi?",["Xayr","Rahmat","Iltimos"],0]]),
+ L("Sonlar",["Birdan beshgacha: один, два, три, четыре, пять.","Oltidan oʻngacha: шесть, семь, восемь, девять, десять."],["один — 1, два — 2","пять — 5","десять — 10"],
+  [["“Два” nechta?",["1","2","3"],1],["“Пять” nechta?",["4","5","6"],1],["10 ruscha qanday?",["девять","десять","восемь"],1]]),"Kelishiklar")
+];
+var REV=[
+["Madina K.","Anatomiya, 2-kurs",30,"Testli darslar juda foydali boʻldi. Imtihonga tayyorgarlik ancha oson kechdi."],
+["Jasur A.","Biologiya, abituriyent",160,"Ustozlar murakkab mavzuni oddiy qilib tushuntiradi. Natijadan mamnunman."],
+["Dilnoza R.","Ingliz tili",280,"Qulay jadval va tushunarli darslar. Bir oyda sezilarli farq boʻldi."]];
+/* RASMLAR: pastdagi FOTO ga oʻz rasmingizni yozsangiz (masalan anatomiya:"rasmlar/anatomiya.jpg"), oʻsha rasm chiqadi. Boʻsh boʻlsa — chizilgan rasm. */
+var W="https://commons.wikimedia.org/wiki/Special:FilePath/";
+var FOTO={anatomiya:"",biokimyo:W+"DNA_double_helix_horizontal.png?width=700",fiziologiya:W+"Lungs_diagram_detailed.svg?width=700",patologiya:W+"Histopathology_of_Schamberg_disease.jpg?width=700",kimyo:W+"Periodic_table_large.svg?width=900",biologiya:W+"Animal_cell_structure_en.svg?width=700",ingliz:"",matematika:"",rus:""};
+var CONTAIN={anatomiya:1};
+function S(b){return '<svg viewBox="0 0 200 120" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+b+'</svg>'}
+var TX=' stroke="none" fill="#fff" font-family="Manrope,sans-serif" font-weight="800"';
+var ART={
+anatomiya:S('<g transform="rotate(-28 100 60)" fill="#fff" stroke="none"><rect x="45" y="52" width="110" height="16" rx="8"/><circle cx="45" cy="50" r="11"/><circle cx="45" cy="70" r="11"/><circle cx="155" cy="50" r="11"/><circle cx="155" cy="70" r="11"/></g><path d="M20 20h14M27 13v14M170 100h14M177 93v14" opacity=".6"/>'),
+biokimyo:S('<path d="M75 8C140 35 60 85 125 112M125 8C60 35 140 85 75 112"/><path d="M88 28h24M82 60h36M88 92h24" stroke-width="3" opacity=".7"/>'),
+fiziologiya:S('<path d="M100 12v34M100 46c-6 8-14 10-18 14M100 46c6 8 14 10 18 14"/><path d="M80 56C55 60 40 90 46 104c12 6 30 0 36-14zM120 56c25 4 40 34 34 48-12 6-30 0-36-14z" fill="#fff" fill-opacity=".25"/>'),
+patologiya:S('<circle cx="85" cy="55" r="34" fill="#fff" fill-opacity=".2"/><path d="M110 80l36 28" stroke-width="9"/><circle cx="74" cy="48" r="7"/><circle cx="96" cy="64" r="5"/><circle cx="92" cy="40" r="3"/>'),
+kimyo:S('<path d="M86 14h28M90 14v32L62 98a9 9 0 0 0 8 14h60a9 9 0 0 0 8-14L110 46V14"/><path d="M72 84h56" opacity=".8"/><circle cx="96" cy="72" r="3" fill="#fff"/><circle cx="108" cy="62" r="2.5" fill="#fff"/><circle cx="104" cy="92" r="3" fill="#fff"/>'),
+biologiya:S('<path d="M100 12C165 30 168 90 100 108C32 90 35 30 100 12z" fill="#fff" fill-opacity=".25"/><path d="M100 22v92M100 50l-20-12M100 70l24-14M100 88l-22-12" stroke-width="3"/>'),
+ingliz:S('<path d="M30 22h110a10 10 0 0 1 10 10v34a10 10 0 0 1-10 10H70l-22 18V76H30a10 10 0 0 1-10-10V32a10 10 0 0 1 10-10z" fill="#fff" fill-opacity=".2"/><text x="85" y="58" font-size="26" text-anchor="middle"'+TX+'>Hello!</text>'),
+matematika:S('<path d="M35 100h110V30z" fill="#fff" fill-opacity=".2"/><path d="M133 100v-12h12" stroke-width="3"/><text x="40" y="52" font-size="30"'+TX+'>π</text><text x="60" y="114" font-size="15"'+TX+'>a²+b²=c²</text>'),
+rus:S('<path d="M30 22h110a10 10 0 0 1 10 10v34a10 10 0 0 1-10 10H70l-22 18V76H30a10 10 0 0 1-10-10V32a10 10 0 0 1 10-10z" fill="#fff" fill-opacity=".2"/><text x="85" y="58" font-size="24" text-anchor="middle"'+TX+'>Привет</text>')
+};
+var M=document.getElementById("main"),dlg=document.getElementById("pay");
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function btn(c,x,f){var b=el("button",c,x);b.type="button";b.onclick=f;return b}
+function pic(f){var p=el("div","pic");p.style.setProperty("--h",f.h);var u=FOTO[f.i];
+ if(u){var m=document.createElement("img");m.alt=f.t;m.loading="lazy";m.style.objectFit="contain";if(u.indexOf("data:")!==0)p.style.background="#f2f5fa";else{p.style.background="#fff";m.style.padding="0"}
+  m.onerror=function(){p.style.background="";p.innerHTML=ART[f.i]};m.src=u;p.appendChild(m)}
+ else p.innerHTML=ART[f.i];return p}
+function sec(t){return el("h2","sec rv",t)}
+function home(){M.textContent="";
+ var h=el("section","hero"),l=el("div");l.appendChild(el("h1",0,"Bilim oʻquv markazi"));
+ l.appendChild(el("p",0,"Tibbiyot va umumta’lim fanlari boʻyicha testli darslar. Bepul sinab koʻring, keyin davom eting."));
+ l.appendChild(btn("go","Fanlarni koʻrish",function(){document.getElementById("fanlar").scrollIntoView()}));
+ var a=el("div","art");["anatomiya","biokimyo","patologiya","kimyo","biologiya","matematika"].forEach(function(k){var sp=el("span");sp.innerHTML=ART[k];a.appendChild(sp)});
+ h.appendChild(l);h.appendChild(a);M.appendChild(h);
+ var s=el("div","stats rv");[[1200,"+","oʻquvchi"],[9,"","fan"],[27,"","dars"],[95,"%","muvaffaqiyat"]].forEach(function(x){var d=el("div","stat");var bb=el("b",0,"0"+x[1]);bb.dataset.n=x[0];bb.dataset.s=x[1];d.appendChild(bb);d.appendChild(el("small",0,x[2]));s.appendChild(d)});M.appendChild(s);
+ var t=sec("Fanlar");t.id="fanlar";M.appendChild(t);
+ var g=el("div","grid rv");FANLAR.forEach(function(f,i){var c=btn("card",null,function(){fan(i)});c.style.setProperty("--i",i);c.appendChild(pic(f));
+  var b=el("div","cb");b.appendChild(el("b",0,f.t));b.appendChild(el("small",0,f.d));c.appendChild(b);g.appendChild(c)});M.appendChild(g);
+ M.appendChild(sec("Nega aynan biz?"));var ft=el("div","feat rv");
+ [["👩‍🏫","Tajribali ustozlar","Har mavzu amaliy misollar bilan tushuntiriladi."],["📝","Testli darslar","Har darsdan soʻng bilimingizni darhol tekshiring."],["⏰","Qulay jadval","Oʻzingizga mos vaqtda, istalgan qurilmada oʻqing."]].forEach(function(x){
+  var d=el("div","f");d.appendChild(el("div","e",x[0]));d.appendChild(el("b",0,x[1]));d.appendChild(el("span",0,x[2]));ft.appendChild(d)});M.appendChild(ft);
+ M.appendChild(sec("Oʻquvchilar fikrlari"));var rv=el("div","rev rv");
+ REV.forEach(function(x){var d=el("div","r");d.appendChild(el("div","stars","★★★★★"));d.appendChild(el("p",0,"“"+x[3]+"”"));
+  var w=el("div","who"),av=el("div","av",x[0][0]);av.style.setProperty("--h",x[2]);w.appendChild(av);var n=el("div");n.appendChild(document.createTextNode(x[0]));n.appendChild(el("small",0,x[1]));w.appendChild(n);d.appendChild(w);rv.appendChild(d)});
+ M.appendChild(rv);
+ var cta=el("section","cta rv");cta.appendChild(el("h2",0,"Bepul sinov darsiga yoziling"));cta.appendChild(el("p",0,"Telefon: +998 00 000 00 00 • Manzil: shahar, koʻcha, uy"));M.appendChild(cta);
+ M.appendChild(el("footer",0,"© Bilim oʻquv markazi • Rasmlar: Wikimedia Commons"));window.scrollTo(0,0);reveal()}
+function countUp(root){root.querySelectorAll("b[data-n]").forEach(function(b){var n=+b.dataset.n,t0=null;function st(t){if(!t0)t0=t;var k=Math.min((t-t0)/1100,1);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+b.dataset.s;if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)})}
+function reveal(){var all=document.querySelectorAll(".rv");
+ if(!("IntersectionObserver" in window)){all.forEach(function(e){e.classList.add("in");if(e.classList.contains("stats"))countUp(e)});return}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");if(e.target.classList.contains("stats"))countUp(e.target);io.unobserve(e.target)}})},{threshold:.12});
+ all.forEach(function(e){io.observe(e)})}
+function fan(i){var f=FANLAR[i];M.textContent="";M.appendChild(btn("crumb","← Fanlar",home));
+ var h=el("div","fh");h.appendChild(pic(f));var w=el("div");w.appendChild(el("h1",0,f.t));w.appendChild(el("p","sub",f.d));h.appendChild(w);M.appendChild(h);
+ var l=el("div","list");f.D.forEach(function(d,j){var paid=j===2;var r=btn("card row"+(paid?" paid":""),null,function(){paid?pullik(f):dars(i,j)});
+  r.appendChild(el("span","n",paid?"🔒":String(j+1)));var x=el("span");x.appendChild(el("b",0,d.t));x.appendChild(document.createElement("br"));
+  x.appendChild(el("small",0,paid?"Pullik dars":"Bepul • "+d.T.length+" ta test"));r.appendChild(x);r.appendChild(el("span","tag",paid?f.price:"Boshlash"));l.appendChild(r)});
+ M.appendChild(l);window.scrollTo(0,0)}
+function dars(i,j){var f=FANLAR[i],d=f.D[j];M.textContent="";M.appendChild(btn("crumb","← "+f.t,function(){fan(i)}));
+ var bn=pic(f);bn.className+=" wide";M.appendChild(bn);
+ var b=el("div","body");b.appendChild(el("h1",0,d.t));d.P.forEach(function(x){b.appendChild(el("p",0,x))});
+ var k=el("div","key");k.appendChild(el("b",0,"Muhim:"));var ul=el("ul");d.K.forEach(function(x){ul.appendChild(el("li",0,x))});k.appendChild(ul);b.appendChild(k);
+ var qs=el("div","q");qs.appendChild(el("h2","sec","Bilimingizni tekshiring"));
+ var score=0,left=d.T.length,res=el("div","res");res.setAttribute("role","status");
+ function finish(){res.textContent="";res.className="res show";res.appendChild(el("div","score","Natija: "+score+" / "+d.T.length+(score===d.T.length?" 🎉":"")));
+  res.appendChild(j===0?btn("btn","Keyingi dars →",function(){dars(i,1)}):btn("btn",f.D[2].t+" (pullik) 🔒",function(){pullik(f)}));
+  res.appendChild(btn("btn ghost","Fanga qaytish",function(){fan(i)}))}
+ d.T.forEach(function(t,n){var q=el("div","qq");q.appendChild(el("h3",0,(n+1)+". "+t.q));var m=el("div","msg");m.setAttribute("role","status");var done=false,first=true;
+  t.o.forEach(function(o,z){var ob=btn("opt",o,function(){if(done)return;
+   if(z===t.a){done=true;ob.className="opt ok";m.textContent="Toʻgʻri!";if(first)score++;left--;if(!left)finish()}
+   else{first=false;ob.className="opt bad";m.textContent="Notoʻgʻri, yana urinib koʻring."}});q.appendChild(ob)});
+  q.appendChild(m);qs.appendChild(q)});
+ qs.appendChild(res);b.appendChild(qs);M.appendChild(b);window.scrollTo(0,0)}
+function pullik(f){document.getElementById("pd").textContent=f.t+" fanidagi 3-dars pullik. Davom etish uchun toʻlov qiling.";document.getElementById("pp").textContent=f.price;dlg.showModal()}
+document.getElementById("close").onclick=function(){dlg.close()};
+document.getElementById("paybtn").onclick=function(){alert("Toʻlov tizimi hali ulanmagan.")};
+document.getElementById("home").onclick=home;
+document.getElementById("theme").onclick=function(){var r=document.documentElement,d=r.getAttribute("data-theme");var dark=d?d==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.setAttribute("data-theme",dark?"light":"dark")};
+home();
+</script>
+</body>
+</html>
